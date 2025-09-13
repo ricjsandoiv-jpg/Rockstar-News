@@ -6,8 +6,7 @@ on:
   workflow_dispatch: # manual trigger
 
 jobs:
-  build:
-  
+build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
