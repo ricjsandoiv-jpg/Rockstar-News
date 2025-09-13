@@ -2,13 +2,12 @@ name: Rockstar Newswire to Discord
 
 on:
 schedule:
-- cron: '0 * * * *' # runs every hour
-workflow_dispatch: # lets you run it manually from the Actions tab
+- cron: '0 * * * *' # every hour
+workflow_dispatch: # allow manual runs
 
 jobs:
 build:
 runs-on: ubuntu-latest
-
 steps:
 - name: Checkout code
 uses: actions/checkout@v3
