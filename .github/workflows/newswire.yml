@@ -1,12 +1,12 @@
 name: Rockstar Newswire to Discord
 
 on:
-schedule:
-- cron: "0 * * * *" # every hour
-workflow_dispatch: # manual trigger
+  schedule:
+    - cron: "0 * * * *" # every hour
+  workflow_dispatch: # manual trigger
 
 jobs:
-    build:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
