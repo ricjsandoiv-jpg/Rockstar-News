@@ -1,0 +1,26 @@
+name: Rockstar Newswire to Discord
+
+on:
+schedule:
+- cron: '0 * * * *' # every hour
+workflow_dispatch: # allow manual runs
+
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout code
+uses: actions/checkout@v3
+
+- name: Set up Node
+uses: actions/setup-node@v3
+with:
+node-version: '18'
+
+- name: Install dependencies
+run: npm install
+
+- name: Run newswire script
+env:
+DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+run: node newswire.js
