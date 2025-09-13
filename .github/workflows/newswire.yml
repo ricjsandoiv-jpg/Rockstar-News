@@ -1,10 +1,8 @@
 name: Rockstar Newswire to Discord
-
 on:
 schedule:
 - cron: '0 * * * *' # every hour
 workflow_dispatch: # allow manual runs
-
 jobs:
 build:
 runs-on: ubuntu-latest
@@ -15,7 +13,6 @@ uses: actions/checkout@v3
 uses: actions/setup-node@v3
 with:
 node-version: '18'
-
 - name: Install dependencies
 run: npm install
 
